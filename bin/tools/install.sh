@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 apt-get install -y git
 
@@ -13,4 +13,6 @@ fi
 
 chmod +x /opt/devtools/devtools
 
-ln -s /opt/devtools/devtools /usr/local/bin/devtools
+if [[ -f "/usr/local/bin/devtools" ]]; then
+    ln -s /opt/devtools/devtools /usr/local/bin/devtools
+fi
