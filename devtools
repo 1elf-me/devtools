@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case ${1} in
+
+  'domain')
+    source /opt/devtools/bin/domain/add.sh
+    ;;
+
+  *)
+    echo "Command not found"
+    ;;
+esac
