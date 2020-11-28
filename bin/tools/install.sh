@@ -13,6 +13,6 @@ fi
 
 chmod +x /opt/devtools/devtools
 
-if [[ -f "/usr/local/bin/devtools" ]]; then
+if [[ ! -f "/usr/local/bin/devtools" ]]; then
     ln -s /opt/devtools/devtools /usr/local/bin/devtools
 fi
