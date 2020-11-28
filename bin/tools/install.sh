@@ -2,9 +2,14 @@
 
 apt-get install -y git
 
-mkdir -p /opt/devtools
-
-git clone https://github.com/1elf-me/devtools.git /opt/devtools
+if [[ -d "/opt/devtools" ]]; then
+    cd /opt/devtools
+    git fetch --all
+    git reset --hard origin/main
+else
+    mkdir -p /opt/devtools
+    git clone https://github.com/1elf-me/devtools.git /opt/devtools
+fi
 
 chmod +x /opt/devtools/devtools
 
