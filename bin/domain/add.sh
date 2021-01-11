@@ -8,7 +8,7 @@ export try_files='$uri $uri/ =404' # export try_files='$uri $uri/ /index.php?$qu
 
 # check if domain name is set
 if [ -z "$domain" ]; then
-  echo "Domain not entered!"
+  echo "Error: Domain not entered!"
   exit
 fi
 
@@ -19,17 +19,17 @@ DOMAIN_DIRECTORY="/var/www/$domain"
 
 # check if domain directory already exist
 if [ -d "$DOMAIN_DIRECTORY" ]; then
-    mkdir -p "$DOMAIN_DIRECTORY"
+    echo "Error: domain directory already exist"
     exit
 fi
 
-# create new domain directory
+echo "create new domain directory..."
 mkdir -p "$DOMAIN_DIRECTORY"
 
-# copy new config file and enable in nginx
+echo "copy new config file and enable in nginx..."
 envsubst <"$DEVTOOLS_DIRECTORY/templates/domain.conf" >"/etc/nginx/sites-available/$domain"
 ln -s -f "/etc/nginx/sites-available/$domain" "/etc/nginx/sites-enabled/$domain"
 service nginx reload
 
-# obtain a new certificate
+echo "obtain a new certificate..."
 certbot --nginx -d "$domain"

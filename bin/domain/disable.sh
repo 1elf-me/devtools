@@ -5,7 +5,7 @@ export domain=${3}
 
 # check if domain name is set
 if [ -z "$domain" ]; then
-  echo "Domain not entered!"
+  echo "Error: Domain not entered!"
   exit
 fi
 
