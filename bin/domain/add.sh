@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set config variables
-export domain=${4}
+export domain=${3}
 
 # shellcheck disable=SC2016
 export try_files='$uri $uri/ =404' # export try_files='$uri $uri/ /index.php?$query_string'
