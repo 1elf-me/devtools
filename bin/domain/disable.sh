@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set config variables
-export domain=${3}
+export domain=${4}
 
 # check if domain name is set
 if [ -z "$domain" ]; then
