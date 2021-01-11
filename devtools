@@ -4,6 +4,12 @@ set -e
 
 export DEVTOOLS_DIRECTORY="$HOME/.devtools"
 
+# automatically update application if enabled
+if [ -f "$DEVTOOLS_DIRECTORY/.autoupdate" ]; then
+    devtools self update
+fi
+
+# command file
 EXECUTE_FILE="$DEVTOOLS_DIRECTORY/bin/$1/$2.sh"
 
 # execute command
@@ -21,4 +27,5 @@ else
   echo ""
   echo "self:"
   echo " devtools self update"
+  echo " devtools self autoupdate"
 fi
