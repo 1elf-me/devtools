@@ -15,8 +15,16 @@ fi
 # notice
 echo "Adding new domain $domain to your system..."
 
+DOMAIN_DIRECTORY="/var/www/$domain"
+
+# check if domain directory already exist
+if [ -d "$DOMAIN_DIRECTORY" ]; then
+    mkdir -p "$DOMAIN_DIRECTORY"
+    exit
+fi
+
 # create new domain directory
-mkdir -p "/var/www/$domain"
+mkdir -p "$DOMAIN_DIRECTORY"
 
 # copy new config file and enable in nginx
 envsubst <"$DEVTOOLS_DIRECTORY/templates/domain.conf" >"/etc/nginx/sites-available/$domain"
