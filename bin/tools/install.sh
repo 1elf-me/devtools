@@ -1,5 +1,6 @@
 #!/bin/bash
-export DEVTOOLS_DIRECTORY="$HOME/.devtools"
+
+DEVTOOLS_DIRECTORY="$HOME/.devtools"
 
 # Install required software for devtools
 setup_host() {
@@ -8,7 +9,7 @@ setup_host() {
 
 # Install devtools in user home directory
 setup_devtools() {
-  if [[ -d $DEVTOOLS_DIRECTORY ]]; then
+  if [ -d "$DEVTOOLS_DIRECTORY" ]; then
     cd "$DEVTOOLS_DIRECTORY" || exit
     git fetch --all
     git reset --hard origin/main
