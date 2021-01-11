@@ -13,7 +13,12 @@ if [ -f "$EXECUTE_FILE" ]; then
 else
   echo "devtools: command not found!"
   echo ""
-  echo "devtools domain add <domain>"
-  echo "devtools setup nginx"
-  echo "devtools self update"
+  echo "domain:"
+  echo " devtools domain add <domain>"
+  echo ""
+  echo "setup:"
+  echo " devtools setup nginx"
+  echo ""
+  echo "self:"
+  echo " devtools self update"
 fi
