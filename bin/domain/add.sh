@@ -12,13 +12,19 @@ if [ -z "$domain" ]; then
   exit
 fi
 
+# notice
+echo "#############################################################"
+echo "# Add new domain $domain to your system"
+echo "#############################################################"
+echo ""
+
 # create new domain directory
-mkdir -p /var/www/${domain}
+mkdir -p "/var/www/$domain"
 
 # copy new config file and enable in nginx
-envsubst </opt/devtools/templates/domain.conf >/etc/nginx/sites-available/${domain}
-ln -s -f /etc/nginx/sites-available/${domain} /etc/nginx/sites-enabled/${domain}
+envsubst <"$DEVTOOLS_DIRECTORY/templates/domain.conf" >"/etc/nginx/sites-available/$domain"
+ln -s -f "/etc/nginx/sites-available/$domain" "/etc/nginx/sites-enabled/$domain"
 service nginx reload
 
 # obtain a new certificate
-certbot --nginx -d ${domain}
+certbot --nginx -d "$domain"
