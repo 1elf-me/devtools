@@ -16,7 +16,6 @@ fi
 echo "#############################################################"
 echo "# Add new domain $domain to your system"
 echo "#############################################################"
-echo ""
 
 # create new domain directory
 mkdir -p "/var/www/$domain"
