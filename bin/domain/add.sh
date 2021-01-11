@@ -13,9 +13,7 @@ if [ -z "$domain" ]; then
 fi
 
 # notice
-echo "#############################################################"
-echo "# Add new domain $domain to your system"
-echo "#############################################################"
+echo "Adding new domain $domain to your system..."
 
 # create new domain directory
 mkdir -p "/var/www/$domain"

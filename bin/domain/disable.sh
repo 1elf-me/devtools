@@ -10,9 +10,7 @@ if [ -z "$domain" ]; then
 fi
 
 # notice
-echo "#############################################################"
-echo "# Disable existing domain $domain from your system"
-echo "#############################################################"
+echo "Disabling existing domain $domain from your system..."
 
 # remove domain from nginx
 rm -f "/etc/nginx/sites-enabled/$domain"
