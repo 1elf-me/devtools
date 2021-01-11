@@ -15,5 +15,5 @@ else
   echo ""
   echo "devtools domain add <domain>"
   echo "devtools setup nginx"
-  echo "devtools tools update"
+  echo "devtools self update"
 fi
