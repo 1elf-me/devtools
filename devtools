@@ -7,7 +7,7 @@ export DEVTOOLS_DIRECTORY="$HOME/.devtools"
 # automatically update application if enabled
 if [ -f "$DEVTOOLS_DIRECTORY/.autoupdate" ]; then
     # shellcheck disable=SC1090
-    source "$EXECUTE_FILE/self/update.sh"
+    source "$DEVTOOLS_DIRECTORY/self/update.sh"
 fi
 
 # command file
