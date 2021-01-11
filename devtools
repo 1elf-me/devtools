@@ -2,26 +2,18 @@
 
 set -e
 
-DEVTOOLS_DIRECTORY="$HOME/.devtools"
+export DEVTOOLS_DIRECTORY="$HOME/.devtools"
+
 EXECUTE_FILE="$DEVTOOLS_DIRECTORY/bin/$1/$2.sh"
 
-# global function
-update_devtools() {
-  # update repository
-  cd "$DEVTOOLS_DIRECTORY" || exit
-  git fetch --all
-  git reset --hard origin/main
-
-  # set permissions
-  chmod +x "$DEVTOOLS_DIRECTORY/devtools"
-}
-
+# execute command
 if [ -f "$EXECUTE_FILE" ]; then
-    # shellcheck disable=SC1090
-    source "$EXECUTE_FILE";
+  # shellcheck disable=SC1090
+  source "$EXECUTE_FILE"
 else
   echo "devtools: command not found!"
   echo ""
   echo "devtools domain add <domain>"
   echo "devtools setup nginx"
+  echo "devtools tools update"
 fi

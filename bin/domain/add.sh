@@ -8,8 +8,8 @@ export try_files='$uri $uri/ =404' # export try_files='$uri $uri/ /index.php?$qu
 
 # check if domain name is set
 if [ -z "$domain" ]; then
-    echo "Domain not entered!"
-    exit
+  echo "Domain not entered!"
+  exit
 fi
 
 # create new domain directory
