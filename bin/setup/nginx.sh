@@ -20,8 +20,8 @@ sudo mysql_secure_installation
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 
-sudo add-apt install -y php-fpm php-mysql
-sudo add-apt install -y php-xml php-mbstring php-curl php-zip php-bcmath
+sudo apt-get install -y php-fpm php-mysql
+sudo apt-get install -y php-xml php-mbstring php-curl php-zip php-bcmath
 
 # test and reload
 sudo nginx -t
