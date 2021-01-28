@@ -14,20 +14,15 @@ fi
 
 # set autoupdate by status
 case $status in
-   "enabled")
+   "enable")
      touch "$DEVTOOLS_DIRECTORY/.autoupdate"
+     echo "autoupdate has been enabled!"
      ;;
-   "disabled")
+   "disable")
      rm -f "$DEVTOOLS_DIRECTORY/.autoupdate"
+     echo "autoupdate has been disabled!"
      ;;
    *)
      echo "Status not available"
      ;;
 esac
-
-# test file
-if [ -f "$DEVTOOLS_DIRECTORY/.autoupdate" ]; then
-  echo "autoupdate is enabled!"
-else
-  echo "autoupdate is disabled!"
-fi
