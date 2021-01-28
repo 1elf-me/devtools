@@ -13,18 +13,21 @@ if [ -z "$status" ]; then
 fi
 
 # set autoupdate by status
-if [ "$status" = "enable" ]; then
-  touch "$DEVTOOLS_DIRECTORY/.autoupdate"
-else if [ "$status" = "disable" ]; then
-  rm -f "$DEVTOOLS_DIRECTORY/.autoupdate"  
-else
-  echo "Status not available"
-  exit 1
-fi
+case $status in
+   "enabled")
+     touch "$DEVTOOLS_DIRECTORY/.autoupdate"
+     ;;
+   "disabled")
+     rm -f "$DEVTOOLS_DIRECTORY/.autoupdate"
+     ;;
+   *)
+     echo "Status not available"
+     ;;
+esac
 
 # test file
 if [ -f "$DEVTOOLS_DIRECTORY/.autoupdate" ]; then
-  echo "autoupdate has been successfully enabled!"
+  echo "autoupdate is enabled!"
 else
-  echo "autoupdate has been disabled!"
+  echo "autoupdate is disabled!"
 fi
