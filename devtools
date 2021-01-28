@@ -8,6 +8,9 @@ export DEVTOOLS_DIRECTORY="$HOME/.devtools"
 if [ -f "$DEVTOOLS_DIRECTORY/.autoupdate" ]; then
     # shellcheck disable=SC1090
     source "$DEVTOOLS_DIRECTORY/bin/self/update.sh"
+else
+    echo "The autoupdate feature is currently disabled."
+    echo "You can easyly enable it with 'devtools self autoupdate enable'"
 fi
 
 # command file
@@ -30,5 +33,5 @@ else
   echo ""
   echo "self:"
   echo " devtools self update"
-  echo " devtools self autoupdate"
+  echo " devtools self autoupdate <enable|disable>"
 fi
