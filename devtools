@@ -22,6 +22,8 @@ else
   echo ""
   echo "domain:"
   echo " devtools domain add <domain>"
+  echo " devtools domain disable <domain>"
+  echo " devtools domain delete <domain>"
   echo ""
   echo "setup:"
   echo " devtools setup nginx"
